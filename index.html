@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webshaan</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="icon.png" type="image/x-icon">
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script>
+        (function() {
+            emailjs.init({
+                publicKey: "0PneWSVRawFC5t9tf"
+            });
+        })();
+    </script>
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .animate-fade-in {
+            animation: fadeIn 0.8s ease-in-out;
+        }
+
+        .animate-slide-up {
+            animation: slideUp 0.6s ease-out;
+        }
+
+        .animate-float {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes float {
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .tech-pattern {
+            background-image: radial-gradient(circle at 25px 25px, rgba(255, 255, 255, 0.116) 2px, transparent 2px), radial-gradient(circle at 75px 75px, rgba(255, 255, 255, 0.1) 2px, transparent 2px);
+            background-size: 100px 100px;
+        }
+
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+    <style>
+        body {
+          font-family: 'Inter', sans-serif;
+        }
+        .text-blue-600 {
+          color: #1e40af !important; /* darker blue for better readability */
+        }
+        .text-blue-800 {
+          color: #1e3a8a !important; /* darker */
+        }
+        .text-blue-100, .text-blue-200, .text-blue-300 {
+          color: #1e3a8a !important;
+        }
+        .text-gray-600, .text-gray-700 {
+          color: #1f2937 !important;
+        }
+        .bg-yellow-400 .text-blue-600 {
+          color: #1e3a8a !important;
+        }
+        .text-center.text-blue-600.text-4xl.font-extrabold.sm\:text-5xl.md\:text-6xl {
+          color: #1e3a8a !important;
+        }
+        .text-center.text-blue-600.text-xl.mt-4 {
+          color: #1e3a8a !important;
+        }
+        .text-sm.font-medium.text-blue-600 {
+          color: #1e3a8a !important;
+        }
+      </style>
+</head>
+
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg fixed w-full top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <span class="text-2xl font-bold text-blue-600">WEBSHAAN</span>
+                    <!-- <span class="ml-2 text-xl font-semibold text-gray-800">Shayaan Khan</span> -->
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="text-gray-700 hover:text-blue-600 transition-colors">Home</a>
+                    <a href="#about" class="text-gray-700 hover:text-blue-600 transition-colors">About</a>
+                    <a href="#services" class="text-gray-700 hover:text-blue-600 transition-colors">Services</a>
+                    <a href="#projects" class="text-gray-700 hover:text-blue-600 transition-colors">Projects</a>
+                    <a href="#contact" class="text-gray-700 hover:text-blue-600 transition-colors">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="gradient-bg tech-pattern min-h-screen flex items-center pt-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="animate-fade-in">
+                <h1 class="text-5xl md:text-7xl font-bold text-white mb-6">
+                    Bring Your Business Online with
+                    <span class="text-yellow-300">Stunning Websites</span>
+                </h1>
+                <p class="text-xl md:text-2xl text-blue-100 mb-8 max-w-3xl mx-auto">
+                    I design and build high-quality websites for businesses, shops, and individuals.
+                </p>
+                <button onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})" class="bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-bold py-4 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105 animate-float">
+                    Get Your Website Today
+                </button>
+            </div>
+
+            <!-- Tech Icons -->
+            <div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8 max-w-2xl mx-auto">
+                <div class="text-center animate-slide-up" style="animation-delay: 0.2s">
+                    <div class="w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-2">
+                        <span class="text-2xl">💻</span>
+                    </div>
+                    <p class="text-blue-100">Responsive</p>
+                </div>
+                <div class="text-center animate-slide-up" style="animation-delay: 0.4s">
+                    <div class="w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-2">
+                        <span class="text-2xl">⚡</span>
+                    </div>
+                    <p class="text-blue-100">Fast</p>
+                </div>
+                <div class="text-center animate-slide-up" style="animation-delay: 0.6s">
+                    <div class="w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-2">
+                        <span class="text-2xl">🎨</span>
+                    </div>
+                    <p class="text-blue-100">Beautiful</p>
+                </div>
+                <div class="text-center animate-slide-up" style="animation-delay: 0.8s">
+                    <div class="w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-2">
+                        <span class="text-2xl">🔒</span>
+                    </div>
+                    <p class="text-blue-100">Secure</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Me Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">About Me</h2>
+                <div class="w-24 h-1 bg-blue-600 mx-auto"></div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="animate-slide-up">
+                    <div class="w-64 h-64 bg-gradient-to-br from-blue-400 to-purple-500 rounded-full mx-auto mb-8 flex items-center justify-center">
+                        <img src="PPF.png" alt="Shayaan's Profile Photo" class="w-40 h-40 rounded-full object-cover">
+                    </div>
+                </div>
+
+                <div class="animate-slide-up">
+                    <h3 class="text-3xl font-bold text-gray-900 mb-6">Hi, I'm Shayaan Khan</h3>
+                    <p class="text-lg text-gray-600 mb-6">
+                        A passionate web developer with expertise in creating modern, responsive websites that help businesses establish their online presence. I combine technical skills with creative design to deliver exceptional digital experiences, For more details Viwe my Portfolio.
+                    </p>
+                    <div class="text-center">
+                        <a href="https://shayaankhan01.netlify.app/"  class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full transition-colors">
+                            My Portfolio
+                        </a>
+                    </div>
+
+                    <div class="mb-6">
+                        <h4 class="text-xl font-semibold text-gray-900 mb-3">Technical Skills:</h4>
+                        <div class="flex flex-wrap gap-3">
+                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">HTML</span>
+                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">CSS</span>
+                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">JavaScript</span>
+                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">PHP</span>
+                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">Python</span>
+                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">Java</span>
+                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">Software Tools</span>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h4 class="text-xl font-semibold text-gray-900 mb-3">Education & Certifications:</h4>
+                        <ul class="text-gray-600 space-y-2">
+                            <li class="flex items-center"><span class="text-blue-600 mr-2">🎓</span> BCS Degree</li>
+                            <li class="flex items-center"><span class="text-blue-600 mr-2">📜</span> MKCL Certifications</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Services Offered</h2>
+                <div class="w-24 h-1 bg-blue-600 mx-auto mb-6"></div>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    From concept to launch, I provide comprehensive web development services tailored to your needs.
+                </p>
+            </div>
+
+            <!-- Service Cards -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+                <div class="bg-white p-8 rounded-2xl shadow-lg card-hover">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-6">
+                        <span class="text-2xl">💼</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Portfolio Websites</h3>
+                    <p class="text-gray-600">Professional portfolio sites to showcase your work and attract clients.</p>
+                </div>
+
+                <div class="bg-white p-8 rounded-2xl shadow-lg card-hover">
+                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-6">
+                        <span class="text-2xl">🏥</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Medical/Shop Websites</h3>
+                    <p class="text-gray-600">Custom websites for medical practices, retail shops, and local businesses.</p>
+                </div>
+
+                <div class="bg-white p-8 rounded-2xl shadow-lg card-hover">
+                    <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mb-6">
+                        <span class="text-2xl">🛒</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">E-commerce/Store Setup</h3>
+                    <p class="text-gray-600">Complete online store solutions with payment integration and inventory management.</p>
+                </div>
+
+                <div class="bg-white p-8 rounded-2xl shadow-lg card-hover">
+                    <div class="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mb-6">
+                        <span class="text-2xl">🌐</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Hosting & Publishing</h3>
+                    <p class="text-gray-600">Reliable hosting solutions and seamless website deployment services.</p>
+                </div>
+
+                <div class="bg-white p-8 rounded-2xl shadow-lg card-hover">
+                    <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mb-6">
+                        <span class="text-2xl">🔧</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Maintenance & Support</h3>
+                    <p class="text-gray-600">Ongoing website maintenance, updates, and technical support services.</p>
+                </div>
+
+                <div class="bg-white p-8 rounded-2xl shadow-lg card-hover">
+                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-6">
+                        <span class="text-2xl">📊</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">SEO Optimization</h3>
+                    <p class="text-gray-600">Improve your website's visibility on search engines with keyword optimization and analytics tools.</p>
+                </div>
+                
+            </div>
+
+            <!-- Pricing Plans -->
+            <div class="text-center mb-12">
+                <h3 class="text-3xl font-bold text-gray-900 mb-4">Pricing Plans</h3>
+                <p class="text-lg text-gray-600">Choose the perfect plan for your project and contact Me</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Basic Plan -->
+                <div class="bg-white p-8 rounded-2xl shadow-xl card-hover border-2 border-blue-500 relative">
+                    <div class="text-center mb-8">
+                        <h4 class="text-2xl font-bold text-gray-900 mb-2">Basic</h4>
+                        <div class="text-4xl font-bold text-blue-600 mb-2">₹1500</div>
+                        <p class="text-gray-600">Perfect Basic Website</p>
+                    </div>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center"><span class="text-green-500 mr-3">✓</span> 1-3 Pages</li>
+                        <li class="flex items-center"><span class="text-green-500 mr-3">✓</span> Responsive Design</li>
+                        <li class="flex items-center"><span class="text-green-500 mr-3">✓</span> Contact Form</li>
+                        <li class="flex items-center"><span class="text-green-500 mr-3">✓</span> Basic SEO</li>
+                        <li class="flex items-center"><span class="text-green-500 mr-3">✓</span> 1 Month Support</li>
+                    </ul>
+                    
+                </div>
+
+                <!-- Standard Plan -->
+                <div class="bg-white p-8 rounded-2xl shadow-xl card-hover border-2 border-blue-500 relative">
+                    <div class="text-center mb-8">
+                        <h4 class="text-2xl font-bold text-gray-900 mb-2">Standard</h4>
+                        <div class="text-4xl font-bold text-blue-600 mb-2">₹2500</div>
+                        <p class="text-gray-600">Great Standard Business Website</p>
+                    </div>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center"><span class="text-green-500 mr-3">✓</span> 4-6 Pages</li>
+                        <li class="flex items-center"><span class="text-green-500 mr-3">✓</span> Responsive Design</li>
+                        <li class="flex items-center"><span class="text-green-500 mr-3">✓</span> Contact Form</li>
+                        <li class="flex items-center"><span class="text-green-500 mr-3">✓</span> Advanced SEO</li>
+                        <li class="flex items-center"><span class="text-green-500 mr-3">✓</span> E-commerce Ready</li>
+                        <li class="flex items-center"><span class="text-green-500 mr-3">✓</span> 2 Months Support</li>
+                    </ul>
+                    
+                </div>
+
+                <!-- Premium Plan -->
+                <div class="bg-white p-8 rounded-2xl shadow-xl card-hover border-2 border-blue-500 relative">
+                    <div class="text-center mb-8">
+                        <h4 class="text-2xl font-bold text-gray-900 mb-2">Premium</h4>
+                        <div class="text-4xl font-bold text-blue-600 mb-2">Starting from ₹3500</div>
+                        <p class="text-gray-600">Complete Advanced Website</p>
+                    </div>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center"><span class="text-green-500 mr-3">✓</span> Unlimited Pages</li>
+                        <li class="flex items-center"><span class="text-green-500 mr-3">✓</span> Responsive Design</li>
+                        <li class="flex items-center"><span class="text-green-500 mr-3">✓</span> Advanced Forms</li>
+                        <li class="flex items-center"><span class="text-green-500 mr-3">✓</span> Premium SEO</li>
+                        <li class="flex items-center"><span class="text-green-500 mr-3">✓</span> Full E-commerce</li>
+                        <li class="flex items-center"><span class="text-green-500 mr-3">✓</span> 4-6 Months Support</li>
+                        <li class="flex items-center"><span class="text-green-500 mr-3">✓</span> Custom Features</li>
+                    </ul>
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Featured Projects</h2>
+                <div class="w-24 h-1 bg-blue-600 mx-auto mb-6"></div>
+                <p class="text-xl text-gray-600">Take a look at some of my recent work — but this is all are templates not real Websites.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-2 gap-8 mb-12">
+                <!-- Project 1 -->
+                <div class="bg-gray-50 rounded-2xl overflow-hidden shadow-lg card-hover">
+                    <div class="aspect-[2/1] bg-gradient-to-br from-blue-400 to-purple-500 flex items-center justify-center">
+                      <a href="Advance business webite/index.html">
+                        <img src="img/Advance business webite.png" class="w-full h-full object-contain" alt="Business Website" />
+                      </a>
+                    </div>
+                    <div class="p-6">
+                      <h3 class="text-xl font-bold text-gray-900 mb-2">Advanced Business Website</h3>
+                      <p class="text-gray-600 mb-4">This template showcases a sophisticated design for businesses, featuring multiple pages and full functionality. It provides a robust online presence for professional enterprises — but this is a template.</p>
+                      
+                    </div>
+                </div>
+                  
+                  
+                  
+
+                <!-- Project 2 -->
+                <div class="bg-gray-50 rounded-2xl overflow-hidden shadow-lg card-hover">
+                    <div class="h-48 bg-gradient-to-br from-green-400 to-blue-500 flex items-center justify-center">
+                        <a href="pet store/index.html">
+                            <img src="img/pet store.png" class="w-full h-full object-contain"  />
+                        </a>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Pet Shop E-commerce Website</h3>
+                        <p class="text-gray-600 mb-4">A full-featured online pet shop designed for selling a variety of pet-related products. This template emphasizes an engaging user experience, indicating a complete e-commerce solution — but this is a template.</p>
+                        
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="bg-gray-50 rounded-2xl overflow-hidden shadow-lg card-hover">
+                    <div class="h-48 bg-gradient-to-br from-purple-400 to-pink-500 flex items-center justify-center">
+                        <a href="protfolio/index.html">
+                            <img src="img/protfolio.png" class="w-full h-full object-contain"  />
+                        </a>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Portfolio Website</h3>
+                        <p class="text-gray-600 mb-4">This creative portfolio template is ideal for graphic designers, offering interactive galleries to showcase their work effectively. It's designed to present a professional and engaging personal brand — but this is a template.</p>
+                        
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="bg-gray-50 rounded-2xl overflow-hidden shadow-lg card-hover">
+                    <div class="aspect-[2/1] bg-gradient-to-br from-blue-400 to-purple-500 flex items-center justify-center">
+                        <a href="shose shop/index.html">
+                            <img src="img/shose shop.png" class="w-full h-full object-contain"  />
+                          </a>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">E-commerce Shoes Website</h3>
+                        <p class="text-gray-600 mb-4">A modern e-commerce solution specifically tailored for online shoe sales. This template includes multiple pages and a clean design, providing an intuitive shopping experience for customers — but this is a template.</p>
+                        
+                    </div>
+                </div>
+            </div>
+
+            
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+
+    <!-- <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">What Clients Say</h2>
+                <div class="w-24 h-1 bg-blue-600 mx-auto"></div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8"> -->
+                
+                <!-- Testimonial 1 -->
+
+                <!-- <div class="bg-white p-8 rounded-2xl shadow-lg">
+                    <div class="flex items-center mb-6">
+                        <div class="w-16 h-16 bg-gradient-to-br from-blue-400 to-purple-500 rounded-full flex items-center justify-center mr-4">
+                            <span class="text-2xl text-white">👨‍💼</span>
+                        </div>
+                        <div>
+                            <h4 class="text-lg font-bold text-gray-900">Dr. Ahmed Hassan</h4>
+                            <p class="text-gray-600">Medical Practice Owner</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 italic">
+                        "Shayaan created an amazing website for my medical practice. The design is professional, and the appointment booking system works perfectly. My patients love the new online experience!"
+                    </p>
+                    <div class="flex text-yellow-400 mt-4">
+                        <span>⭐⭐⭐⭐⭐</span>
+                    </div>
+                </div> -->
+
+                <!-- Testimonial 2 -->
+                 
+                <!-- <div class="bg-white p-8 rounded-2xl shadow-lg">
+                    <div class="flex items-center mb-6">
+                        <div class="w-16 h-16 bg-gradient-to-br from-green-400 to-blue-500 rounded-full flex items-center justify-center mr-4">
+                            <span class="text-2xl text-white">👩‍💼</span>
+                        </div>
+                        <div>
+                            <h4 class="text-lg font-bold text-gray-900">Sarah Johnson</h4>
+                            <p class="text-gray-600">Boutique Owner</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 italic">
+                        "The e-commerce website Shayaan built for my boutique exceeded all expectations. Sales have increased by 40% since launch. Highly recommend his services!"
+                    </p>
+                    <div class="flex text-yellow-400 mt-4">
+                        <span>⭐⭐⭐⭐⭐</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Want a website? Let's talk!</h2>
+                <div class="w-24 h-1 bg-blue-600 mx-auto mb-6"></div>
+                <p class="text-xl text-gray-600">Ready to bring your business online? Get in touch today!</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12">
+                <!-- Contact Form -->
+                <div class="bg-gray-50 p-8 rounded-2xl"> 
+                    <h3 class="text-2xl font-bold text-gray-900 mb-6">Send a Message</h3>
+                  
+                    <!-- ✅ Add an ID to form for EmailJS -->
+                    <form id="contact-form" class="space-y-6">
+                      <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Name</label>
+                        <input type="text" name="name" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                      </div>
+                  
+                      <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Email</label>
+                        <input type="email" name="email" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                      </div>
+                  
+                      <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Message</label>
+                        <textarea name="message" rows="5" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"></textarea>
+                      </div>
+
+                      <input type="hidden" id="form-date" name="date">
+                  
+                      <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition-colors">
+                        Send Message
+                      </button>
+                    </form>
+                  </div>
+                  
+                  <script>
+                    document.getElementById("form-date").value = new Date().toLocaleString();
+                  </script>
+
+                <!-- Contact Info -->
+                <div class="space-y-8">
+                    <div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-6">Get in Touch</h3>
+                        <p class="text-lg text-gray-600 mb-8">
+                            Ready to start your project? Choose your preferred way to connect with me.
+                        </p>
+                    </div>
+
+                    <!-- Contact Methods -->
+                    <div class="space-y-6">
+                        <a href="https://wa.me/+918767376810" target="_blank" class="flex items-center p-4 bg-green-50 rounded-lg hover:bg-green-100 transition-colors">
+                            <div class="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center mr-4">
+                                <span class="text-white text-xl">📱</span>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-900">WhatsApp</h4>
+                                <p class="text-gray-600">Quick response guaranteed</p>
+                            </div>
+                        </a>
+
+                        <a href="mailto:webshaan.01@gmail.com" class="flex items-center p-4 bg-blue-50 rounded-lg hover:bg-blue-100 transition-colors">
+                            <div class="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center mr-4">
+                                <span class="text-white text-xl">📧</span>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-900">Email</h4>
+                                <p class="text-gray-600">webshaan.01@gmail.com</p>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Response Time -->
+                    <div class="bg-yellow-50 p-6 rounded-lg">
+                        <h4 class="font-bold text-gray-900 mb-2">⚡ Quick Response</h4>
+                        <p class="text-gray-600">I typically respond within 2-4 hours during business days.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <div class="flex items-center justify-center mb-4">
+                    <span class="text-3xl font-bold text-blue-400">WEBSHAAN</span>
+                </div>
+                <p class="text-gray-400 mb-6">Web Developer | Creating Digital Experiences</p>
+                <div class="border-t border-gray-800 pt-8">
+                    <p class="text-gray-400">&copy; 2024 Shayaan Khan. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        
+
+        // Add scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for animation
+        document.querySelectorAll('.animate-slide-up').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+
+        // Pricing plan button handlers
+        document.querySelectorAll('button').forEach(button => {
+            if (button.textContent.includes('Choose')) {
+                button.addEventListener('click', function() {
+                    const planName = this.textContent.replace('Choose ', '');
+                    alert(`Great choice! You've selected the ${planName} plan. I'll contact you shortly to discuss your project details.`);
+                });
+            }
+        });
+
+        
+    </script>
+    <script>
+        (function() {
+            function c() {
+                var b = a.contentDocument || a.contentWindow.document;
+                if (b) {
+                    var d = b.createElement('script');
+                    d.innerHTML = "window.__CF$cv$params={r:'95d7d837835416dc',t:'MTc1MjIzMjEyNC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";
+                    b.getElementsByTagName('head')[0].appendChild(d)
+                }
+            }
+            if (document.body) {
+                var a = document.createElement('iframe');
+                a.height = 1;
+                a.width = 1;
+                a.style.position = 'absolute';
+                a.style.top = 0;
+                a.style.left = 0;
+                a.style.border = 'none';
+                a.style.visibility = 'hidden';
+                document.body.appendChild(a);
+                if ('loading' !== document.readyState) c();
+                else if (window.addEventListener) document.addEventListener('DOMContentLoaded', c);
+                else {
+                    var e = document.onreadystatechange || function() {};
+                    document.onreadystatechange = function(b) {
+                        e(b);
+                        'loading' !== document.readyState && (document.onreadystatechange = e, c())
+                    }
+                }
+            }
+        })();
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script>
+      // Initialize EmailJS
+      (function () {
+        emailjs.init("0PneWSVRawFC5t9tf"); // Your Public Key
+      })();
+    
+      // Handle form submit
+      document.getElementById("contact-form").addEventListener("submit", function (e) {
+        e.preventDefault();
+    
+        emailjs.sendForm("service_0k6jiut", "template_tsoza86", this)
+          .then(function () {
+            alert("✅ Message sent successfully!");
+          }, function (error) {
+            alert("❌ Failed to send message:\n" + JSON.stringify(error));
+          });
+    
+        this.reset();
+      });
+    </script>
+
+</body>
+
+</html>
